@@ -8,7 +8,7 @@ export default function App() {
   const [token, setToken] = useState(null);
   const theme = createTheme();
 
-  // if (!token) return <ThemeProvider theme={theme}><RegisterPage onAuthorized={setToken} /></ThemeProvider>;
+  // if (!token) return <ThemeProvider theme={theme}><RegisterPage onAuthorized={setToken} /></ThemeProvider
 
   return (
     <ThemeProvider theme={theme}>
