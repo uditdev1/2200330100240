@@ -1,18 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import RegisterPage from "./pages/RegisterPage";
+import StockPage from "./pages/StockPage";
+import RelationPage from "./pages/RelationPage";
+import { createTheme, ThemeProvider, Container } from "@mui/material";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [token, setToken] = useState(null);
+  const theme = createTheme();
+
+  // if (!token) return <ThemeProvider theme={theme}><RegisterPage onAuthorized={setToken} /></ThemeProvider>;
 
   return (
-    <div className='min-h-screen bg-zinc-900 '>
-      <div className="text-5xl text-neutral-200">
-        Hello Tailwind test 
-      </div>
-    </div>
-  )
+    <ThemeProvider theme={theme}>
+      <Container>
+        <StockPage token={token} />
+        <RelationPage token={token} />
+      </Container>
+    </ThemeProvider>
+  );
 }
-
-export default App
